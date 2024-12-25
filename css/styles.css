@@ -110,7 +110,9 @@ footer {
         text-align: center;
         gap: 1rem;
     }
-    /* kuvat */
+}
+
+/* Kuvat - siirretty @media-kyselyn ulkopuolelle */
 .hero-image {
     max-width: 100%;
     height: auto;
@@ -119,4 +121,3 @@ footer {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-}
