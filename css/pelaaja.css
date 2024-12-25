@@ -1,0 +1,90 @@
+/* --- Perusasetukset ja reset-tyylit --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Perustyylit --- */
+body {
+  font-family: Arial, sans-serif;
+  background: #efefef;
+  color: #333;
+}
+
+/* --- Sivun yleisrakenne --- */
+.container {
+  display: flex;       /* Jakaa sivun kahteen palstaan */
+  min-height: 100vh;   /* Vähintään koko selainikkunan korkeus */
+}
+
+/* --- Navigaatio (vasen palsta) --- */
+nav {
+  background: #fff;
+  width: 220px;        /* Voit säätää sopivaksi */
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+nav h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li a {
+  display: block;
+  padding: 0.6rem;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.2s;
+}
+
+nav li a:hover {
+  background: #f9f9f9;
+  color: #000;
+}
+
+/* --- Pääsisältö (oikea palsta) --- */
+main {
+  flex: 1;
+  padding: 2rem;
+  background: #f3f3f3;
+}
+
+main h1 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #444;
+}
+
+/* --- Pelaaja-osiot --- */
+/* Piilotetaan oletuksena kaikki pelaaja-osat */
+.player {
+  display: none;
+}
+
+/* Näytetään se pelaaja, jonka ID on URL-osoitteen #kohteena */
+.player:target {
+  display: block;
+  background: #fff;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.player h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.player p {
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
