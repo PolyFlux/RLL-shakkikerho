@@ -89,6 +89,12 @@ main {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* lisää kappaleiden alapuolelle väliä */
+.spaced {
+    margin-bottom: 2rem;
+}
+
+
 /* Footer */
 footer {
     text-align: center;
