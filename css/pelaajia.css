@@ -43,7 +43,7 @@
 }
 
 .player-image {
-    width: 150px; /* Sopiva koko pelaajalle */
+    width: 300px; /* Sopiva koko pelaajalle */
     height: auto; /* Säilyttää mittasuhteet */
     border-radius: 8px; /* Pyöristetyt kulmat, valinnainen */
     margin: 1rem 0; /* Marginaalia ympärille */
