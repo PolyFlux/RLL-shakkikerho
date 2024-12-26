@@ -50,6 +50,22 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hieno varjo */
 }
 
+.image-attribution {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-top: 0.5rem;
+}
+
+.image-attribution a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.image-attribution a:hover {
+    color: var(--accent-color);
+}
+
+
 /* Piilotetaan pelaajat oletuksena */
 .player {
     display: none;
