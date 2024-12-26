@@ -42,6 +42,14 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.player-image {
+    width: 150px; /* Sopiva koko pelaajalle */
+    height: auto; /* Säilyttää mittasuhteet */
+    border-radius: 8px; /* Pyöristetyt kulmat, valinnainen */
+    margin: 1rem 0; /* Marginaalia ympärille */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hieno varjo */
+}
+
 /* Piilotetaan pelaajat oletuksena */
 .player {
     display: none;
