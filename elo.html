@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elo-pistesysteemin esittely</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <h1>Rauman Lyseon Lukion Shakkikerho</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Etusivu</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="elo.html" class="active">Elo-pistesysteemin esittely</a></li>
+                <li><a href="pelaajia.html">Kuuluisia pelaajia</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <section class="hero">
+            <h2>Mikä on Elo-pistesysteemi?</h2>
+            <p>
+                Elo-järjestelmä on tilastollinen menetelmä, jota käytetään arvioimaan pelaajien taitotasoa kaksinpeleissä,
+                kuten shakissa. Järjestelmän kehitti Arpad Elo, unkarilais-amerikkalainen fysiikan professori ja shakkimestari.
+            </p>
+            <img src="img/elo-system.jpg" alt="Elo-pistesysteemin kaavio" class="hero-image">
+        </section>
+
+        <section class="announcements">
+            <h3>Kuinka Elo-pisteet toimivat?</h3>
+            <ul>
+                <li>Pelaajien pisteet päivittyvät jokaisen pelin jälkeen heidän suorituskykynsä perusteella.</li>
+                <li>Jos pelaaja voittaa vahvemman vastustajan, hänen pisteensä kasvavat enemmän kuin voitosta heikompaa pelaajaa vastaan.</li>
+                <li>Tappiot vastaavasti vähentävät pisteitä, mutta tappio vahvemmalle vastustajalle vaikuttaa vähemmän kuin tappio heikommalle pelaajalle.</li>
+            </ul>
+            <p>
+                Laskenta perustuu todennäköisyysmalliin, jossa ennustetaan pelituloksia pelaajien nykyisten pistemäärien perusteella.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jarmo Penttilä</p>
+    </footer>
+</body>
+</html>
