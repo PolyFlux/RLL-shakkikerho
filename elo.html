@@ -47,9 +47,14 @@
         <section>
             <br>
             <h3>Elo-luvun laskeminen</h3>
-            Kaikki alkaa pelaajien odotuspistemäärän laskemisesta. Kun kaksi pelaajaa kohtaavat, on luultavaa, että vahvempi pelaaja (eli pelaajista se, 
-            jonka vahvuusluku on suurempi) voittaa todennäköisemmin &ndash; mitä suurempi ero pelaajien vahvuuksissa on, sitä todennäköisempää on, että vahvempi
-            pelaaja voittaa. Jos pelaajien vahvuusluvut ovat täsmälleen samat, on odotettavissa, että he pelaavat tasapelin.
+            Kaikki alkaa pelaajien odotuspistemäärän laskemisesta. Shakissa pistemäärä 0 tarkoittaa häviötä, pistemäärä 0,5 tarkoittaa tasapeliä, 
+            ja pistemäärä 1 tarkoittaa voittoa.
+            <br>
+            Kahden pelaajan kohdatessa on odotettavissa, jos heidän vahvuuslukunsa ovat täsmälleen samat, että he pelaavat tasapelin, 
+            jolloin molempien odotuspistemäärä olisi 0,5.
+            Jos toinen heistä on vahvempi, on luultavaa, että vahvempi pelaaja voittaa todennäköisemmin &ndash; mitä suurempi ero pelaajien vahvuuksissa on, sitä todennäköisempää on, että vahvempi
+            pelaaja voittaa. Tällöin vahvemman pelaajan odotuspistemäärä olisi sitä lähempänä yhtä ja heikomman pelaajan sitä lähempänä nollaa, 
+            mitä suurempi heidän vahvuuseronsa olisi.
             Periaatteessa tällainen odotuspistemäärä \( E_A\) (tässä esimerkissä pelaajalle A) voitaisiin laskea melko suoraviivaisesti 
             \[ E_A = \frac{R_A}{R_A + R_B}, \]
             jossa \( R_A \) on pelaajan A ja \( R_B \) pelaajan B Elo-luku ennen ottelua.
