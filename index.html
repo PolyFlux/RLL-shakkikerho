@@ -6,35 +6,19 @@
     <title>Rauman Lyseon Lukion Shakkikerho</title>
     <link rel="stylesheet" href="css/index.css">
     <style>
-        .chessboard {
-            display: grid;
-            grid-template-columns: repeat(8, 50px);
-            grid-template-rows: repeat(8, 50px);
-            width: 400px;
-            height: 400px;
-            margin: 20px auto;
-            border: 2px solid #333;
-            position: relative;
+        body {
+            background-image: url('img/Shakkitausta.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
-        .square {
-            width: 50px;
-            height: 50px;
-        }
-        .light {
-            background-color: #eee;
-        }
-        .dark {
-            background-color: #777;
-        }
-        .piece {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            position: absolute;
-            transition: transform 1s ease-in-out;
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            display: inline-block;
+            margin: 50px auto;
         }
     </style>
 </head>
@@ -56,7 +40,6 @@
         <section class="hero">
             <h2>Tervetuloa RLL:n Shakkikerhoon!</h2>
             <p>Tule kokeilemaan onneasi tai taitojasi (tai molempia) ja nauttimaan shakkipelin haasteista!</p>
-            <div class="chessboard" id="chessboard"></div>
         </section>
 
         <section class="announcements">
@@ -79,40 +62,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        function createBoard() {
-            const board = document.getElementById("chessboard");
-            for (let row = 0; row < 8; row++) {
-                for (let col = 0; col < 8; col++) {
-                    let square = document.createElement("div");
-                    square.classList.add("square", (row + col) % 2 === 0 ? "light" : "dark");
-                    board.appendChild(square);
-                }
-            }
-        }
-
-        function animatePieces() {
-            const board = document.querySelector(".chessboard");
-            const pieces = [
-                { char: "♔", x: 4, y: 0 },
-                { char: "♚", x: 4, y: 7 },
-                { char: "♘", x: 1, y: 0 },
-                { char: "♞", x: 6, y: 7 }
-            ];
-
-            pieces.forEach(piece => {
-                let pieceElem = document.createElement("div");
-                pieceElem.classList.add("piece");
-                pieceElem.innerHTML = piece.char;
-                board.appendChild(pieceElem);
-                setTimeout(() => {
-                    pieceElem.style.transform = `translate(${piece.x * 50}px, ${piece.y * 50}px)`;
-                }, 500);
-            });
-        }
-
-        createBoard();
-        setTimeout(animatePieces, 1000);
-    </script>
 </body>
 </html>
