@@ -77,19 +77,32 @@
             jossa \( R_A \) on pelaajan A ja \( R_B \) pelaajan B Elo-luku ennen ottelua. 
             </p>  
 <br>
-            <p><b>Tehdään pari esimerkkilaskua.</b> Jos kaksi samantasoista pelaajaa, joiden molempien vahvuusluku on 1500, aikoo otella toisiaan vastaan, yllä oleva kaava kertoo, että heidän odotuspistemääränsä ovat  \[ E = \frac{R}{R_A + R_B} = \frac{1500}{1500+1500} = 0,5. \] Tämä siis molemmille pelaajille, koska heidän vahvuuslukunsa ovat samat. Olisi siis odotettavissa, että joko he pelaavat tasapelin, koska molemmat ovat yhtä vahvoja, tai vaihtoehtoisesti useasta pelatusta keskinäisestä ottelusta he voittavat yhtä monta.
-            </p>
-                
-<br>
-            <p>
-            Jos kaksi eritasoista pelaajaa, joiden vahvuusluvut ovat \(R_A=1500\) ja \(R_B=1600\), pelaisivat vastakkain, heidän odotuspistemääränsä olisivat yllä esitetyn kaavan avulla laskettuna \[ E_A = \frac{1500}{1500+1600} \approx 0,48 \quad \text{ja} \quad E_B = \frac{1600}{1500+1600} \approx 0,52. \]
+            <p><b>Tehdään pari esimerkkilaskua.</b> 
+                <ul>
+                <li>Jos kaksi samantasoista pelaajaa, joiden molempien vahvuusluku on 1500, aikoo otella toisiaan vastaan, yllä oleva kaava kertoo, että heidän odotuspistemääränsä ovat  \[ E = \frac{R}{R_A + R_B} = \frac{1500}{1500+1500} = 0,5. \] Tämä siis molemmille pelaajille, koska heidän vahvuuslukunsa ovat samat. Olisi siis odotettavissa, että joko he pelaavat tasapelin, koska molemmat ovat yhtä vahvoja, tai vaihtoehtoisesti useasta pelatusta keskinäisestä ottelusta he voittavat yhtä monta.
+                </li>
+                <li>Jos kaksi eritasoista pelaajaa, joiden vahvuusluvut ovat \(R_A=1500\) ja \(R_B=1600\), pelaisivat vastakkain, heidän odotuspistemääränsä olisivat yllä esitetyn kaavan avulla laskettuna \[ E_A = \frac{1500}{1500+1600} \approx 0,48 \quad \text{ja} \quad E_B = \frac{1600}{1500+1600} \approx 0,52. \]
 Toisin sanoen pelaajalla A olisi hieman pienempi todennäköisyys voittaa kuin pelaajalla B.
-          </p>  
+                </li>  
 <br>            
-        <p>
-        Lasketaan sitten vertailun vuoksi odotuspistemäärät kahdelle pelaajalle, joiden vahvuusluvut ovat \(R_A=800\) ja \(R_B=900\)  
-        </p>        
-            (...tulossa jatkoa)
+                <li>Lasketaan sitten vertailun vuoksi odotuspistemäärät kahdelle pelaajalle, joiden vahvuusluvut ovat \(R_A=800\) ja \(R_B=900\).
+                    \[ E_A = \frac{800}{800+900} \approx 0,47 \quad \text{ja} \quad E_B = \frac{900}{800+900} \approx 0,53. \]
+                </li>      
+            </ul>
+Näistä esimerkeistä voidaan tehdä muutama havainto:
+            <ul>
+                <li>Laskukaava vaikuttaisi täsmäävän sen ajatuksen kanssa, että kyseessä olisi todennäköisyys voittaa peli: Odotuspistemäärien summat ovat aina yksi ja heikommalle pelaajalle tulee pienempi odotuspistemäärä kuin vahvemmalle.</li>
+                <li>Toisaalta jos pelaajien välinen tasoero on sadan pisteen luokkaa (vahvuuslukujen ollessa vaikkapa 1500 ja 1600), niin heidän odotuspistemääränsä eroavat toisistaan vain niin vähän, että heidän voidaan sanoa olevan käytännössä yhtä vahvoja. Vasta noin tuhannen pisteen erolla alkaa tulla selviä eroja odotuspistemäärään.</li>
+                    <ul>
+                        <li>Tämä ei ole toivottavaa, koska ihmisen on hankala hahmottaa kovin suuria lukuskaaloja.</li>
+                    </ul>
+                <li>Sadan pisteen ero ei ole sama pelaajille, joiden vahvuusluvut ovat 800 ja 900, kuin pelaajille, joiden vahvuusluvut ovat 1500 ja 1600.</li>
+                <ul>
+                        <li>Tämä ei ole toivottavaa, koska ihmisen on hankala hahmottaa tällaisia suhteellisia eroja.</li>
+                    </ul>
+            </ul>
+            
+           </p>   (...tulossa jatkoa)
         </section>
     </main>
 
