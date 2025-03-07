@@ -92,6 +92,9 @@ Toisin sanoen pelaajalla A olisi hieman pienempi todennäköisyys voittaa kuin p
 Näistä esimerkeistä voidaan tehdä muutama havainto:
             <ul>
                 <li>Laskukaava vaikuttaisi täsmäävän sen ajatuksen kanssa, että kyseessä olisi todennäköisyys voittaa peli: Odotuspistemäärien summat ovat aina yksi ja heikommalle pelaajalle tulee pienempi odotuspistemäärä kuin vahvemmalle.</li>
+                <ul>
+                        <li>Tämän ominaisuuden säilyminen on siis lopullisessa pistelaskufunktiossa toivottavaa.</li>
+                    </ul>
                 <li>Toisaalta jos pelaajien välinen tasoero on sadan pisteen luokkaa (vahvuuslukujen ollessa vaikkapa 1500 ja 1600), niin heidän odotuspistemääränsä eroavat toisistaan vain niin vähän, että heidän voidaan sanoa olevan käytännössä yhtä vahvoja. Vasta noin tuhannen pisteen erolla alkaa tulla selviä eroja odotuspistemäärään.</li>
                     <ul>
                         <li>Tämä ei ole toivottavaa, koska ihmisen on hankala hahmottaa kovin suuria lukuskaaloja.</li>
@@ -101,8 +104,12 @@ Näistä esimerkeistä voidaan tehdä muutama havainto:
                         <li>Tämä ei ole toivottavaa, koska ihmisen on hankala hahmottaa tällaisia suhteellisia eroja.</li>
                     </ul>
             </ul>
-            
-           </p>   (...tulossa jatkoa)
+Kahden jälkimmäisimmän seikan takia laskukaavaa odotuspistemäärän laskemiseksi pitää hiukan muokata. Mutta miten? 
+           </p> 
+<br>
+            <p>
+               Käy ilmi, että jos tehdään pieni muutos, jossa odotuspistemäärä lasketaankin varsinaisten vahvuuslukujen asemesta vahvuuslukujen eksponenttifunktioiden avulla, kaikki toivotut ominaisuudet ilmestyvät järjestelmään. 
+            </p>
         </section>
     </main>
 
