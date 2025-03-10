@@ -52,11 +52,18 @@
             <br>
             <h3>Kuinka Elo-pisteet toimivat?</h3>
             <ul>
-                <li> Aivan aluksi uusi jokainen pelaaja saa pistemäärän 1500.
+                <li> Pelaaja saa aluksi jonkin alustavan pistemäärän.</li>
                 <li>Pelaajien pisteet päivittyvät jokaisen pelin jälkeen heidän suorituskykynsä perusteella.</li>
-                <li>Jos pelaaja voittaa vahvemman vastustajan, hänen pisteensä kasvavat enemmän kuin voitosta heikompaa pelaajaa vastaan.</li>
-                <li>Tappiot vastaavasti vähentävät pisteitä, mutta tappio vahvemmalle vastustajalle vaikuttaa vähemmän kuin tappio heikommalle pelaajalle.</li>
+                    <ul>
+                        <li>Jos pelaaja voittaa vahvemman vastustajan, hänen pisteensä kasvavat enemmän kuin voitosta heikompaa pelaajaa vastaan.</li>
+                        <li>Tappiot vastaavasti vähentävät pisteitä, mutta tappio vahvemmalle vastustajalle vaikuttaa vähemmän kuin tappio heikommalle pelaajalle.</li>
+                    </ul>
                 <li>Laskenta perustuu todennäköisyysmalliin, jossa ennustetaan pelituloksia pelaajien nykyisten pistemäärien perusteella.</li>
+                    <ul>
+                        <li>Toisiaan vastaan otteleville pelaajille lasketaan kummallekin aluksi ottelun odotuspistemäärä.</li>
+                        <li>Ottelutuloksen ja odotuspistemäärän erotus määrittää, miten pelaajien vahvuusluvut muuttuvat.</li>
+                        <li>Jos pelaaja suoriutuu odotuspistemääräänsä paremmin, hän saa pisteitä. Odotuspistemäärää heikommasta suoriutumisesta taas menettää pisteitä.</li>
+                    </ul>
             </ul>
             <p>
                 
@@ -65,7 +72,7 @@
 
         <section>
             <br>
-            <h3>Elo-luvun laskeminen</h3>
+            <h3>Odotuspistemäärän laskeminen</h3>
             <p>Kaikki alkaa pelaajien <b>odotuspistemäärän</b> laskemisesta. 
             Kun kaksi pelaajaa kohtaavat ja heidän vahvuuslukunsa ovat täsmälleen samat, heidän odotetaan pelaavan tasapelin, jolloin molempien 
             odotuspistemäärä on 0,5. Jos kuitenkin toinen pelaajista on vahvempi, on todennäköisempää, että vahvempi pelaaja voittaa. Mitä suurempi ero pelaajien 
@@ -111,7 +118,7 @@ Kahden jälkimmäisimmän seikan takia laskukaavaa odotuspistemäärän laskemis
            </p> 
 <br>
             <p>
-               Käy ilmi, että jos tehdään pieni muutos, jossa odotuspistemäärä lasketaankin varsinaisten vahvuuslukujen asemesta vahvuuslukujen eksponenttifunktioiden \( 10^{R_A} \) ja \( 10^{R_B} \) avulla, kaikki toivotut ominaisuudet ilmestyvät järjestelmään. 
+               Käy ilmi, että jos tehdään pieni muutos, jossa odotuspistemäärä lasketaankin varsinaisten vahvuuslukujen asemesta vahvuuslukujen eksponenttifunktioiden \( 10^{R_A} \) ja \( 10^{R_B} \) avulla, kaikki toivotut ominaisuudet ilmestyvät järjestelmään. Jos halutaan vielä säätää 
             </p>
         </section>
     </main>
