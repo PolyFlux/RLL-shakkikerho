@@ -114,11 +114,12 @@ Toisin sanoen pelaajalla A olisi hieman pienempi todennäköisyys voittaa kuin p
                         <li>Tämä ei ole toivottavaa, koska ihmisen on hankala hahmottaa tällaisia suhteellisia eroja.</li>
                     </ul>
             </ul>
-Kahden jälkimmäisimmän seikan takia laskukaavaa odotuspistemäärän laskemiseksi pitää hiukan muokata. Mutta miten? 
+Laskukaavaa odotuspistemäärän laskemiseksi pitää siis hiukan muokata, jotta vahvuuslukujen skaala olisi helposti hahmotettava, ja samankokoinen piste-ero merkitsisi yhtä suurta eroa minkä tahansa tasoisille pelaajille. Mutta miten? 
            </p> 
 <br>
             <p>
-               Käy ilmi, että jos tehdään pieni muutos, jossa odotuspistemäärä lasketaankin varsinaisten vahvuuslukujen asemesta vahvuuslukujen eksponenttifunktioiden \( 10^{R_A} \) ja \( 10^{R_B} \) avulla, kaikki toivotut ominaisuudet ilmestyvät järjestelmään. Jos halutaan vielä säätää 
+               Käy ilmi, että jos tehdään pieni muutos, jossa odotuspistemäärä lasketaankin varsinaisten vahvuuslukujen asemesta vahvuuslukujen eksponenttifunktioiden \( 10^{R_A} \) ja \( 10^{R_B} \) avulla, jälkimmäinen efekti yllä mainituista käy toteen; asteikko muuttuu logaritmiseksi, jolloin sama vahvuuslukujen erotus näkyy samana odotuspistemäärien suhteena. Toisin sanoen, jos \[ E_A = \frac{10^{R_A}}{10^{R_A} + 10^{R_B}} \quad \text{ja} \quad E_B = \frac{10^{R_B}}{10^{R_A} + 10^{R_B}}, \] niin silloin \[ \frac{E_A}{E_B} = 10^{R_A - R_B}, \] eli toisin sanoen \[ R_A - R_B = \lg\(\frac{E_A}{E_B}\). \]
+                kaikki toivotut ominaisuudet ilmestyvät järjestelmään
             </p>
         </section>
     </main>
