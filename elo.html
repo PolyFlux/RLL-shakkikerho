@@ -77,8 +77,8 @@
             Kun kaksi pelaajaa kohtaavat ja heidän vahvuuslukunsa ovat täsmälleen samat, heidän odotetaan pelaavan tasapelin, jolloin molempien 
             odotuspistemäärä on 0,5. Jos kuitenkin toinen pelaajista on vahvempi, on todennäköisempää, että vahvempi pelaaja voittaa. Mitä suurempi ero pelaajien 
             vahvuusluvuissa on, sitä todennäköisemmäksi vahvemman pelaajan voitto käy. Tällaisessa tilanteessa vahvemman pelaajan odotuspistemäärä lähestyy yhtä, 
-            kun taas heikomman pelaajan odotuspistemäärä lähestyy nollaa vahvuuseron kasvaessa. Odotuspistemäärä voi siis olla mikä tahansa luku nollan ja yhden väliltä riippuen pelaajien vahvuuserosta. <i>Odotuspistemäärä voidaan aivan hyvin tulkita 
-            voiton todennäköisyydeksi.</i> Se, onko odotuspistemäärä <i>tismalleen</i> sama kuin todennäköisyys voittaa ottelu, onkin sitten eri kysymys, 
+            kun taas heikomman pelaajan odotuspistemäärä lähestyy nollaa vahvuuseron kasvaessa. Odotuspistemäärä voi siis olla mikä tahansa luku nollan ja yhden väliltä riippuen pelaajien vahvuuserosta. Miten tämä pitäisi tulkita? Jos pelaajan odotuspistemäärä on vaikkapa 0,72 jotakuta tiettyä vastustajaa vastaan, voidaan ajatella, että sadasta pelatusta ottelusta hänen ennustetaan voittavan 72 ottelua tätä yhtä ja samaa pelaajaa vastaan. Näin ollen on kiinnostavaa, että <i>odotuspistemäärä voidaan aivan hyvin tulkita 
+            voiton todennäköisyydeksi.</i> Se, osoittautuuko odotuspistemäärä <i>tismalleen</i> samaksi kuin (tilastollinen) todennäköisyys voittaa ottelu, onkin sitten eri kysymys, 
             johon voidaan yrittää vastata analysoimalla ottelutilastoja.
             Periaatteessa tällainen odotuspistemäärä \( E_A\) (tässä esimerkissä pelaajalle A) voitaisiin laskea melko suoraviivaisesti 
             \[ E_A = \frac{R_A}{R_A + R_B}, \]
@@ -119,7 +119,13 @@ Laskukaavaa odotuspistemäärän laskemiseksi pitää siis hiukan muokata, jotta
 <br>
             <p>
                Käy ilmi, että jos tehdään pieni muutos, jossa odotuspistemäärä lasketaankin varsinaisten vahvuuslukujen asemesta vahvuuslukujen eksponenttifunktioiden \( 10^{R_A} \) ja \( 10^{R_B} \) avulla, jälkimmäinen efekti yllä mainituista käy toteen; asteikko muuttuu logaritmiseksi, jolloin sama vahvuuslukujen erotus näkyy samana odotuspistemäärien suhteena. Toisin sanoen, jos \[ E_A = \frac{10^{R_A}}{10^{R_A} + 10^{R_B}} \quad \text{ja} \quad E_B = \frac{10^{R_B}}{10^{R_A} + 10^{R_B}}, \] niin silloin \[ \frac{E_A}{E_B} = 10^{R_A - R_B}, \] eli toisin sanoen \[ R_A - R_B = \lg \left( \frac{E_A}{E_B}\right). \]
-                kaikki toivotut ominaisuudet ilmestyvät järjestelmään
+                </p>
+            <br>
+            <p>
+                Vielä kuitenkin skaalausongelma jää jäljelle. Eksponenttifunktioita käytettäessä jo yhden pisteen ero vahvuusluvussa tuottaa toiselle pelaajalle kymmenkertaisen odotuspistemäärän toiseen pelaajaan nähden. Esimerkiksi vahvuusluvuilla \(R_A=1500\) ja \(R_B=1501\) käy seuraavasti: \( E_A \approx 0,09\) ja \( E_B \approx 0,91\). Tällaisen seurauksena kaikkien samaa pistejärjestelmää käyttävien pelaajien vahvuusluvut asettuvat vain muutaman pisteen päähän toisistaan, mikä taas ei ole kovin järkevää lajissa, jossa pelaajia on paljon (FIDEn listoilla on satojatuhansia pelaajia), koska silloin heidän paremmuusjärjestyksensä hahmottaminen on hankalaa. Onneksi skaalausongelma saadaan korjattua helposti jakamalla eksponentti sopivalla luvulla (merkitään tässä kirjaimella <i>c</i>), jolla se pienennetään halutun kokoiseksi. FIDEssä on päädytty käyttämään arvoa \( c = 400 \). Tämän pienen lisäyksen jälkeen kaikki toivotut ominaisuudet ilmestyvät järjestelmään. Odotuspistemäärä lasketaan siis kaavalla \[ E_A = \frac{10^{\frac{R_A}{c}}{10^{\frac{R_A}{c}} + 10^{\frac{R_B}{c}}}. \] 
+            </p>
+            <p>
+                
             </p>
         </section>
     </main>
