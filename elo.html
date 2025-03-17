@@ -124,8 +124,14 @@ Laskukaavaa odotuspistemäärän laskemiseksi pitää siis hiukan muokata, jotta
             <p>
                 Vielä kuitenkin skaalausongelma jää jäljelle. Eksponenttifunktioita käytettäessä jo yhden pisteen ero vahvuusluvussa tuottaa toiselle pelaajalle kymmenkertaisen odotuspistemäärän toiseen pelaajaan nähden. Esimerkiksi vahvuusluvuilla \(R_A=1500\) ja \(R_B=1501\) käy seuraavasti: \( E_A \approx 0,09\) ja \( E_B \approx 0,91\). Tällaisen seurauksena kaikkien samaa pistejärjestelmää käyttävien pelaajien vahvuusluvut asettuvat vain muutaman pisteen päähän toisistaan, mikä taas ei ole kovin järkevää lajissa, jossa pelaajia on paljon (FIDEn listoilla on satojatuhansia pelaajia), koska silloin heidän paremmuusjärjestyksensä hahmottaminen on hankalaa. Onneksi skaalausongelma saadaan korjattua helposti jakamalla eksponentti sopivalla skaalausluvulla (merkitään tässä kirjaimella <i>c</i>), jolla se pienennetään halutun kokoiseksi. FIDEssä on päädytty käyttämään arvoa \( c = 400 \). Tämän pienen lisäyksen jälkeen kaikki toivotut ominaisuudet ilmestyvät järjestelmään. Odotuspistemäärä lasketaan siis kaavalla \[ E_A = \frac{10^{R_A/c}}{10^{R_A/c} + 10^{R_B/c}}, \] jolloin vasta 400 pisteen ero pelaajien vahvuusluvuissa tuottaa toiselle pelaajalle kymmenkertaisen odotuspistemäärän toiseen pelaajaan nähden. Eli pelaaja, jonka vahvuusluku on 1500, voittaisi vahvuusluvun 1900 omaavan pelaajan yhdeksän prosentin todennäköisyydellä, mutta vahvuusluvun 1600 omaavan pelaajan jo 36 prosentin todennäköisyydellä. 
             </p>
+<br>
+            <h3>Uuden vahvuusluvun laskeminen</h3>
             <p>
-                
+Nyt kun kahden pelaajan odotuspistemäärä sekä heidän välisensä ottelun tulos ovat tiedossa, miten näistä saisi johdonmukaisesti laskettua uuden vahvuusluvun? Elo-systeemissä on yksinkertainen ja nerokas tapa tehdä tämä vähentämällä ottelutuloksesta odotuspistemäärä! Kyseinen erotus kerrotaan vielä sopivan kokoisella vakiolla ja laskun lopputulos lisätään vanhaan vahvuuslukuun.
+            </p>
+
+            <p>
+                Otetaan esimerkki, joka avaa erotuksen laskemisen eleganssia. Pelaaja A, jonka vahvuusluku on \(R_A=1500\), voittaa pelaajan, jonka vahvuusluku on \(R_B=1600\). Tällöin \(E_A \approx 0,36, E_B \approx 0,64, S_A=1\) ja \( S_B=0  \), jossa \( S_A \) ja \( S_B \) ovat ottelutulokset kummallekin pelaajalle. Näin ollen \( S_A - E_A = 0,64 \) ja \( S_B - E_B = -0,64 \). Voittavalle pelaajalle erotus on siis aina positiivinen ja häviävälle pelaajalle saman verran negatiivinen.
             </p>
         </section>
     </main>
