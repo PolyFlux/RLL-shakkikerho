@@ -52,11 +52,12 @@
             <br>
             <h3>Kuinka Elo-pisteet toimivat?</h3>
             <ul>
-                <li> Pelaaja saa aluksi jonkin alustavan pistemäärän.</li>
-                <li>Pelaajien pisteet päivittyvät jokaisen pelin jälkeen heidän suorituskykynsä perusteella.</li>
+                <li>Järjestelmä ei pyri määrittämään pelaajan vahvuutta absoluuttisesti, vaan määrittämään sen sillä perusteella, miten tämä suoriutuu muita pelaajia vastaan. </li>
+                <li> Pelaaja saa aluksi jonkin alustavan pistemäärän eli <i>vahvuusluvun</i>.</li>
+                <li>Pelaajien vahvuusluvut päivittyvät jokaisen pelin jälkeen ottelutuloksen perusteella.</li>
                     <ul>
                         <li>Jos pelaaja voittaa vahvemman vastustajan, hänen pisteensä kasvavat enemmän kuin voitosta heikompaa pelaajaa vastaan.</li>
-                        <li>Tappiot vastaavasti vähentävät pisteitä, mutta tappio vahvemmalle vastustajalle vaikuttaa vähemmän kuin tappio heikommalle pelaajalle.</li>
+                        <li>Tappiot vastaavasti vähentävät pisteitä, mutta tappio vahvemmalle vastustajalle vaikuttaa vähemmän vahvuuslukuun kuin tappio heikommalle pelaajalle.</li>
                     </ul>
                 <li>Laskenta perustuu todennäköisyysmalliin, jossa ennustetaan pelituloksia pelaajien nykyisten pistemäärien perusteella.</li>
                     <ul>
@@ -129,9 +130,18 @@ Laskukaavaa odotuspistemäärän laskemiseksi pitää siis hiukan muokata, jotta
             <p>
 Nyt kun kahden pelaajan odotuspistemäärä sekä heidän välisensä ottelun tulos ovat tiedossa, miten näistä saisi johdonmukaisesti laskettua uuden vahvuusluvun? Elo-systeemissä on yksinkertainen ja nerokas tapa tehdä tämä vähentämällä ottelutuloksesta odotuspistemäärä! Kyseinen erotus kerrotaan vielä sopivan kokoisella vakiolla ja laskun lopputulos lisätään vanhaan vahvuuslukuun.
             </p>
-
+<br>
             <p>
-                Otetaan esimerkki, joka avaa erotuksen laskemisen eleganssia. Pelaaja A, jonka vahvuusluku on \(R_A=1500\), voittaa pelaajan, jonka vahvuusluku on \(R_B=1600\). Tällöin \(E_A \approx 0,36, E_B \approx 0,64, S_A=1\) ja \( S_B=0  \), jossa \( S_A \) ja \( S_B \) ovat ottelutulokset kummallekin pelaajalle. Näin ollen \( S_A - E_A = 0,64 \) ja \( S_B - E_B = -0,64 \). Voittavalle pelaajalle erotus on siis aina positiivinen ja häviävälle pelaajalle saman verran negatiivinen.
+                Otetaan esimerkki, joka avaa erotuksen laskemisen eleganssia. Pelaaja A, jonka vahvuusluku on \(R_A=1500\), voittaa pelaajan, jonka vahvuusluku on \(R_B=1600\). Tällöin \(E_A \approx 0,36, E_B \approx 0,64, S_A=1\) ja \( S_B=0  \), jossa \( S_A \) ja \( S_B \) ovat ottelutulokset kummallekin pelaajalle. Näin ollen \( S_A - E_A = 0,64 \) ja \( S_B - E_B = -0,64 \). Voittavalle pelaajalle erotus on siis aina positiivinen ja häviävälle pelaajalle saman verran negatiivinen, ja se on itseisarvoltaan sitä suurempi, mitä suurempi todellisen tuloksen poikkeama on odotusarvoon nähden. Ja juuri tällä tavalla vahvuusluvun olisi toivottavaakin muuttua!  
+            </p>
+<br>
+            <p>
+                Nyt erotus pitää vain kertoa jollain sopivan kokoisella luvulla \(K\), jotta se voidaan muuttaa suoraan vahvuusluvun muutokseksi. Tämä kerroin \(K\) rajoittaa samalla, kuinka paljon vahvuusluku voi kerrallaan muuttua, koska jos muutoksen itseisarvo on korkeintaan 1, niin vahvuusluku voi muuttua enintään \(K\):n verran. Jos \(K\) on liian suuri, järjestelmästä tulee liian herkkä, niin että jokainen ottelu muuttaa vahvuuslukuja suhteettoman paljon. Jos taas \(K\) on liian pieni, järjestelmä on liian kankea, eikä muutoksia tapahdu tarpeeksi nopeasti. Monissa paikoissa käytetään moniportaista arvoa, jossa \(K\):n arvo riippuu pelaajan vahvuudesta. Esimerkiksi FIDEn peleissä nykyään \(K=40\) uusille pelaajille, \(K=20\) pelaajille joiden vahvuusluku on alle 2400 ja \(K=10\) vahvuusluvultaan yli 2400 oleville pelaajille.
+            </p>
+<br>
+            <p>
+                Näin ollen lopullinen kaava, jolla Elo-pisteet voidaan laskea ottelutulosten ja pelaajien aiempien vahvuuslukujen perusteella, on seuraavanlainen:
+                \[ R'_A = R_A + K \left( S_A - \frac{10^{R_A/c}}{10^{R_A/c} + 10^{R_B/c}} \right) \]
             </p>
         </section>
     </main>
