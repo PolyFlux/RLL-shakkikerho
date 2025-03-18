@@ -141,7 +141,17 @@ Nyt kun kahden pelaajan odotuspistemäärä sekä heidän välisensä ottelun tu
 <br>
             <p>
                 Näin ollen lopullinen kaava, jolla Elo-pisteet voidaan laskea ottelutulosten ja pelaajien aiempien vahvuuslukujen perusteella, on seuraavanlainen:
-                \[ R'_A = R_A + K \left( S_A - \frac{10^{R_A/c}}{10^{R_A/c} + 10^{R_B/c}} \right) \]
+                \[ R'_A = R_A + K \left( S_A - \frac{10^{R_A/c}}{10^{R_A/c} + 10^{R_B/c}} \right), \] jossa 
+                <br>
+                \(R'_A \) on pelaajan A uusi vahvuusluku,
+                <br>
+                \(R_A \) on pelaajan vanha vahvuusluku,
+                <br>
+                \(K \) on vapaasti valittava skaalauskerroin,
+                <br>
+                \(S_A \) on pelaajan A tulos ottelusta (0 on häviö, 0,5 on tasapeli ja 1 voitto),
+                <br>
+                \(c \) on vapaasti valittava skaalauskerroin. 
             </p>
         </section>
     </main>
